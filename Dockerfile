@@ -1,8 +1,5 @@
 FROM registry.gitlab.com/linuxserver.io/docker-webtop/webtop:ubuntu-xfce-kasm-version-ee0aa013
 
-# Install Chromium and Avirato client
-USER root
-
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y \
@@ -53,12 +50,11 @@ Categories=Application;" > /config/desktop/applications/avirato-client.desktop
 # Set permissions
 RUN chmod +x /config/desktop/applications/*.desktop
 
-# Switch back to default user
-USER abc
+# Create user with proper permissions
+RUN groupadd -g $PGID abc || true && \
+    useradd -u $PUID -g $PGID -d /config -s /bin/bash abc || true && \
+    usermod -u $PUID abc || true && \
+    groupmod -g $PGID abc || true
 
 # Expose additional ports if needed
 EXPOSE 3000 3001
-
-# Set environment variables for Chromium
-ENV CHROME_BIN=/usr/bin/chromium
-ENV CHROME_PATH=/usr/bin/chromium
