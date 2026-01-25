@@ -12,6 +12,10 @@ RUN apt-get update && \
     xz-utils \
     unzip \
     libfuse2t64 \
+    tmux \
+    fish \
+    zsh \
+    neovim \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
