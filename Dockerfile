@@ -8,7 +8,7 @@ RUN apt-get update && \
     wget \
     curl \
     gnupg2 \
-    uniz \
+    unizip \
     libfuse2t64 \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
