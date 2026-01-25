@@ -49,8 +49,7 @@ RUN chmod +x /config/desktop/applications/*.desktop
 USER abc
 
 # Expose additional ports if needed
-EXPOSE 3000
-EXPOSE 3001
+EXPOSE 3000 3001
 
 # Set environment variables for Chromium
 ENV CHROME_BIN=/usr/bin/chromium
