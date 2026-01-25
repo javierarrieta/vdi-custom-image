@@ -10,12 +10,18 @@ RUN apt-get update && \
     chromium-driver \
     htop \
     btop \
-    orca-slicer \
     wget \
     curl \
     gnupg2 \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
+
+# Download and install Orca Slicer
+RUN wget -O /tmp/orca-slicer.AppImage https://github.com/SoftFever/OrcaSlicer/releases/latest/download/OrcaSlicer_Ubuntu_2204.AppImage || \
+    wget -O /tmp/orca-slicer.AppImage https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/OrcaSlicer_Ubuntu_2204.AppImage && \
+    chmod +x /tmp/orca-slicer.AppImage && \
+    mv /tmp/orca-slicer.AppImage /usr/local/bin/orca-slicer && \
+    ln -s /usr/local/bin/orca-slicer /usr/bin/orca-slicer
 
 # Install Avirato client (adjust installation method based on actual Avirato requirements)
 RUN wget -O /tmp/avirato-client.deb https://releases.avirato.com/avirato-client_latest_amd64.deb || \
