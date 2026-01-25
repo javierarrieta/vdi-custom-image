@@ -10,6 +10,7 @@ RUN apt-get update && \
     chromium-driver \
     htop \
     btop \
+    orca-slicer \
     wget \
     curl \
     gnupg2 \
