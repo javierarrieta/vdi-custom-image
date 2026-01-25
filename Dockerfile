@@ -15,6 +15,7 @@ RUN apt-get update && \
     tmux \
     fish \
     zsh \
+    git \
     neovim \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
