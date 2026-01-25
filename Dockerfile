@@ -17,8 +17,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install Orca Slicer
-RUN wget -O /tmp/orca-slicer.AppImage https://github.com/SoftFever/OrcaSlicer/releases/latest/download/OrcaSlicer_Ubuntu_2204.AppImage || \
-    wget -O /tmp/orca-slicer.AppImage https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/OrcaSlicer_Ubuntu_2204.AppImage && \
+RUN wget -O /tmp/orca-slicer.AppImage https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.1/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.3.1.AppImage && \
     chmod +x /tmp/orca-slicer.AppImage && \
     mv /tmp/orca-slicer.AppImage /usr/local/bin/orca-slicer && \
     ln -s /usr/local/bin/orca-slicer /usr/bin/orca-slicer
