@@ -8,6 +8,8 @@ RUN apt-get update && \
     apt-get install -y \
     chromium \
     chromium-driver \
+    htop \
+    btop \
     wget \
     curl \
     gnupg2 \
