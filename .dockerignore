@@ -1,0 +1,30 @@
+# Version control
+.git
+.gitignore
+
+# Documentation
+*.md
+LICENSE
+
+# CI/CD
+.github
+
+# Secrets (never copy these into the image)
+*.pem
+*.key
+*.env
+.env*
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files (avoid recursive inclusion)
+docker-compose*.yml
+Dockerfile*
